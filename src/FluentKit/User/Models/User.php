@@ -26,7 +26,7 @@ class User extends SuperModel implements UserInterface, RemindableInterface{
     public $rules = array(
 		'global' => array(
             'email' => 'unique|email|required',
-            'password' => 'confirmed|between:10,100',
+            'password' => 'confirmed_if_dirty|between:10,100',
             'first_name' => 'alpha_spaces',
             'last_name' => 'alpha_spaces'
         ),

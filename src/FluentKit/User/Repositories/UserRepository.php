@@ -12,7 +12,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
 	public function findByUserName($username)
 	{
 		$where = call_user_func_array("{$this->modelClassName}::where", array('email', '=', $username));
-		return $where->get();
+		return $where->get()->first();
 	}
     
     public function findByEmail($email)
