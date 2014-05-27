@@ -16,6 +16,10 @@ class UserServiceProvider extends ServiceProvider {
     {
         
         $this->app->bind('FluentKit\User\Repositories\UserRepositoryInterface', 'FluentKit\User\Repositories\UserRepository');
+        
+        $this->app->bindShared('fluentkit.user.repository', function(){
+            return new FluentKit\User\Repositories\UserRepository;
+        });
 
     }
 
@@ -26,6 +30,9 @@ class UserServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
+        $this->package('fluentkit/user');
+        
+        $this->app['router']->controller('login', 'FluentKit\User\Controllers\AuthController');
     }
 
     public function provides(){
