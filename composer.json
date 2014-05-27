@@ -1,0 +1,31 @@
+{
+    "name": "fluentkit/user",
+    "description": "Simple User system for FluentKit",
+    "keywords": ["laravel", "framework", "users", "auth"],
+    "type": "library",
+    "homepage": "https://github.com/FluentKit/User",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Mason",
+            "homepage": "http://nohalfpixels.com/",
+            "email": "contact@nohalfpixels.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FluentKit/User/issues"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "laravel/framework": "4.1.*",
+        "fluentkit/supermodel": "dev-master",
+        "fluentkit/repositories": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "FluentKit\\User": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
