@@ -14,11 +14,24 @@ class AuthController extends Controller{
         //parent::__construct();
     }
     
+    public function logout(){
+        $this->app['auth']->logout();
+        $this->app['fluentkit.messages']->add('success', 'Logged Out');
+        return $this->app['redirect']->to('login');
+    }
+    
     public function getIndex()
-    {   
+    {
         return $this->app['view']->make('user::login');
+    }
+    
+    public function postIndex(){
+        if (\Auth::attempt(array('email' => \Input::get('email'), 'password' => \Input::get('password'))))
+        {
+            return \Redirect::intended('/');
+        }
         
-        return $this->app['redirect']->to('login/reset');
+        return \Redirect::to('/?errors=true');
     }
     
     public function getReset(){

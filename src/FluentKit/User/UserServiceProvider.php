@@ -32,6 +32,7 @@ class UserServiceProvider extends ServiceProvider {
     {
         $this->package('fluentkit/user');
         $this->app['router']->controller('login', 'FluentKit\User\Controllers\AuthController');
+        $this->app['router']->get('logout', 'FluentKit\User\Controllers\AuthController@logout');
     }
 
     public function provides(){
