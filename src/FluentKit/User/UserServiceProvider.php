@@ -31,12 +31,11 @@ class UserServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->package('fluentkit/user');
-        
         $this->app['router']->controller('login', 'FluentKit\User\Controllers\AuthController');
     }
 
     public function provides(){
-    	return array();
+    	return array('fluentkit.user.repository');
     }
 
 }

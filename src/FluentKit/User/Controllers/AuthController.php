@@ -16,7 +16,9 @@ class AuthController extends Controller{
     
     public function getIndex()
     {   
-        return $this->app['redirect']->to('login/reset');   
+        return $this->app['view']->make('user::login');
+        
+        return $this->app['redirect']->to('login/reset');
     }
     
     public function getReset(){
