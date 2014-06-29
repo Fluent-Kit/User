@@ -20,7 +20,7 @@
         "php": ">=5.3.0",
         "laravel/framework": "4.1.*",
         "fluentkit/supermodel": "dev-master",
-        "fluentkit/repositories": "dev-master",
+        "fluentkit/repositories": "dev-master"
     },
     "autoload": {
         "psr-0": {
